@@ -1,0 +1,144 @@
+/* Responsive css for both html files */
+
+
+
+/*  for small laptop view */
+
+@media (max-width:1025px){
+    
+    .moviePoster img{
+        width: 250px;
+    }
+    .movieVideo{
+        width: 100%;
+    }
+}
+
+/* for tablet view */
+@media (min-width:426px) and (max-width:769px){
+    .head h2 {
+        width: 35%;
+    }
+
+    .castBox{
+        width: 15%;
+    }
+}
+
+@media (max-width:426px)  {
+    /* for index.html page */
+
+    .navBar{
+        justify-content: center;
+        padding: 8px 0;
+    }
+    .searchIcon{
+        right: 50px;
+    }
+
+    .leftNav{
+        padding: 5px;
+    }
+    .ulList{
+        display: none;
+    }
+
+    .rightNav{
+        margin: 0;
+        padding: 5px;
+        margin-right: 26px;
+    }
+    .rightNav input{
+        font-size: 0.8rem;
+        width: 95%;
+    }
+    .rightNav form i{
+        top: 8px;
+    }
+
+    .menuIcon{
+        display: block;
+        margin-top: 3px;
+    }
+    .headingBox{
+        padding: 7px 1rem;
+    }
+    .box {
+        width: 156px;
+    }
+
+
+
+    /* for movieDetails page */
+
+    .movieInner{
+        flex-direction: column;
+        padding: 7px;
+    }
+
+    .moviePoster{
+        margin-bottom: 15px;
+    }
+    .moviePoster img{
+        width: 200px;
+    }
+
+    .movieContent{
+        width: 100%;
+    }
+
+    .movieTitle{
+        font-size: 1.8rem;
+    }
+    .movieTitle, .tagline, .movieOverview h3 {
+        margin: 15px 0;
+    }
+
+    .otherDetails{
+        width: 80%;
+    }
+
+   
+    .prev {
+        left: 5px;
+        font-size: 1rem;
+    }
+    .next{
+        right: 5px;
+        font-size: 1rem;
+    }
+
+    .videoBoxSlider{
+        width: 300px;
+        height: 169px;
+        
+    }
+
+    .head h2 {
+        width: 70%;
+        font-size: 1.3rem;
+    }
+
+    .castBox{
+        width: 35%;
+        margin: 5px 10px;
+    }
+
+    #scrollIcon{
+        font-size: 1.2rem;
+    }
+
+    .recommendBox {
+        width: 140px;
+    }
+}
+
+
+
+
+
+@media (max-width:374px) {
+    .box{
+        width: 130px;
+    }
+}
