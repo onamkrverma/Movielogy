@@ -18,7 +18,10 @@ With this website users can see currently trending movies and get all relevant d
 
 
 # Demo (screenshots)
+1. 
+![Web capture_25-6-2022_173446_movielogy22-compressed](https://user-images.githubusercontent.com/106578262/175772784-5fdbc2a1-6e19-43e5-aee2-b09c46985dde.jpg)
 
+2.
 ![Web capture_25-6-2022_172737_movielogy22-compressed](https://user-images.githubusercontent.com/106578262/175772663-37394e9c-9b44-410c-ba86-2831709510d1.jpg)
 
 
