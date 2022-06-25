@@ -1,7 +1,7 @@
 # Movielogy 
 
 Movielogy is An awesome movie details website made using javaScript and TMDB API  
-With this website users can see currently trending movies and get all relevent details/information about that movie 
+With this website users can see currently trending movies and get all relevant details/information about that movie 
 
 
 # Features of Movielogy 
