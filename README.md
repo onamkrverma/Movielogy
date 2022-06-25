@@ -18,6 +18,8 @@ With this website users can see currently trending movies and get all relevant d
 
 
 # Demo (screenshots)
- 
 
-**or you can check yourself by visiting to** https://movielogy22.netlify.app/ 
+![Web capture_25-6-2022_172737_movielogy22-compressed](https://user-images.githubusercontent.com/106578262/175772663-37394e9c-9b44-410c-ba86-2831709510d1.jpg)
+
+
+**or you can check by yourself visiting to** https://movielogy22.netlify.app/ 
