@@ -340,10 +340,8 @@
 
 .reviewsBox {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
-    /* flex-direction: column; */
-    /* margin: 25px; */
+    
 }
 .reviewsInner{
     display:  none;
@@ -358,8 +356,8 @@
     border-radius: 20px;
 }
 .reviewsContent img{
-    width: 70px;
-    margin: 10px;
+    width: 80px;
+    padding: 10px;
 }
 .quoteIcon{
     display: flex;
@@ -368,7 +366,7 @@
 .reviewsContent p {
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
-    margin: 25px;
+    padding: 25px;
     text-align: center;
 }
 .reviewerDetails{

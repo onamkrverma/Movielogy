@@ -143,8 +143,19 @@
     .prev2{
         left: 3px;
     }
+    .reviewsContainer{
+        margin: 5px;
+    }
+    .reviewsContent{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 90%;
+    }
     .reviewsContent p {
         font-size: 0.7rem;
+        padding: 5px;
     }
 
     .recommendBox {
