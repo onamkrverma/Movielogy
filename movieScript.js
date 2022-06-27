@@ -1,6 +1,5 @@
 const apiKey = 'api_key=379ec0dfe7a7de79851cd8c750391777';
 const baseUrl = 'https://api.themoviedb.org/3/'
-// const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=`;
 const searchUrl = baseUrl + '/search/movie?' + apiKey + '&query=';
 const imgUrl = 'https://image.tmdb.org/t/p/w500';
 
@@ -12,9 +11,8 @@ const credits = baseUrl + '/movie/' + movieId + '/credits?' + apiKey;
 
 const recommendMovie = baseUrl + '/movie/' + movieId + '/recommendations?' + apiKey;
 const similarMovie = baseUrl + '/movie/' + movieId + '/similar?' + apiKey;
-
-// const video = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}&language=en-US`;
-
+const reviews = baseUrl + '/movie/' + movieId + '/reviews?' + apiKey;
+// console.log(reviews);
 const video = baseUrl + '/movie/' + movieId + '/videos?' + apiKey;
 
 const movieContainer = document.querySelector(".movieContainer");
@@ -163,13 +161,13 @@ function showVideo(movie) {
     const next = document.querySelector('.next');
 
     prev.addEventListener('click', ()=>{
-        console.log('prev');
+        // console.log('prev');
         flag = flag -1;
         videoSlider(flag)
     });
 
     next.addEventListener('click',()=>{
-        console.log('next');
+        // console.log('next');
         flag = flag +1;
         videoSlider(flag) 
     });
@@ -278,6 +276,90 @@ function crewDetails(movie) {
     }
 }
 
+// for gettig movies reviews 
+const getReviews = async (url)=>{
+    const resp = await fetch(url);
+    const data = await resp.json();
+    console.log(data)
+    console.log(data.results)
+    showReviews(data.results)
+
+}
+
+getReviews(reviews);
+
+function showReviews(movie){
+    const reviewsContainer = document.querySelector('.reviewsContainer');
+    const reviewsBox = document.createElement('div');
+    reviewsBox.classList.add('reviewsBox');
+
+    movie.forEach(element => {
+        
+        let reviewsHtml = `
+        <div class="reviewsInner">    
+            <div class="reviewerDetails">
+            <img src="profile.png" alt="Author image">
+            <h5>${element.author_details.username}</h5>
+            </div>
+            <div class="reviewsContent">
+                <img src="quotation-mark1.png" alt="quote mark">
+                <p>‟${element.content}”</p>
+                <div class="quoteIcon">
+                    <img src="quotation-mark2.png" alt="quote mark">
+                </div>
+            </div>
+        </div>
+        `
+
+        reviewsBox.insertAdjacentHTML('afterbegin',reviewsHtml);
+        reviewsContainer.appendChild(reviewsBox);
+    });
+   
+  
+    //  reviews slider
+    
+    let flag = 0;
+
+    const next2 = document.querySelector(".next2");
+    const prev2 = document.querySelector(".prev2");
+
+    prev2.addEventListener('click',()=>{
+        flag = flag-1;
+        reviewSlider(flag);
+        console.log('prev click')
+    })
+    next2.addEventListener('click',()=>{
+        flag = flag+1;
+        reviewSlider(flag);
+        console.log('next click')
+    })
+
+    reviewSlider(flag);
+
+    function reviewSlider(num){
+        const reviewsInner = document.querySelectorAll('.reviewsInner');
+        console.log(reviewsInner);
+        
+        if(num === reviewsInner.length){
+            flag = 0;
+            num = 0;
+        }
+        if (num<0){
+            flag = reviewsInner.length-1;
+            num = reviewsInner.length-1;
+        }
+
+        for (const y of reviewsInner) {
+            y.style.display = 'none';
+        }
+
+        console.log(num);
+        reviewsInner[num].style.display = 'flex';
+    }
+
+
+}
+
 
 
 // for getting recommendations movies
@@ -328,11 +410,16 @@ function showRecomm(movie) {
             const credits = baseUrl + '/movie/' + movieId + '/credits?' + apiKey;
             const recommendMovie = baseUrl + '/movie/' + movieId + '/recommendations?' + apiKey;
             const video = baseUrl + '/movie/' + movieId + '/videos?' + apiKey;
-            const videoBox = document.querySelector('.videoBox')
-            videoBox.innerHTML = ""
+            const reviews = baseUrl + '/movie/' + movieId + '/reviews?' + apiKey;
+            const videoBox = document.querySelector('.videoBox');
+            videoBox.innerHTML = "";
+            
+            const reviewsBox = document.querySelector('.reviewsBox');
+            reviewsBox.innerHTML = "";
             getDetails(details)
             getVideo(video)
             getCast(credits)
+            getReviews(reviews)
             getRecom(recommendMovie)
 
         })

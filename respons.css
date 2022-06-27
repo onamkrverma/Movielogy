@@ -100,12 +100,14 @@
 
    
     .prev {
-        left: 5px;
-        font-size: 1rem;
+        color: wheat;
+        left: 1px;
+        font-size: 2rem;
     }
     .next{
-        right: 5px;
-        font-size: 1rem;
+        color: wheat;
+        right: 1px;
+        font-size: 2rem;
     }
 
     .videoBoxSlider{
@@ -126,6 +128,23 @@
 
     #scrollIcon{
         font-size: 1.2rem;
+    }
+
+    .reviewsInner{
+        width: 100%;
+        margin: 0;
+    }
+    .next2,.prev2{
+        color: wheat;
+    }
+    .next2{
+        right: 3px;
+    }
+    .prev2{
+        left: 3px;
+    }
+    .reviewsContent p {
+        font-size: 0.7rem;
     }
 
     .recommendBox {

@@ -3,13 +3,9 @@ const baseUrl = 'https://api.themoviedb.org/3/';
 const searchUrl = baseUrl + 'search/movie?'+ apiKey + '&query=';
 const imgUrl = 'https://image.tmdb.org/t/p/w500';
 
-// https://api.themoviedb.org/3/search/movie?api_key=379ec0dfe7a7de79851cd8c750391777&query=Jack+Reacher
-
 const popularMovies = baseUrl + 'movie/popular?'+ apiKey + '&language=en-US&page=1';
 
 const trendingMovies = baseUrl+ 'trending/movie/day?'+ apiKey;
-
-// const video = `https://api.themoviedb.org/3/movie/${movie_id}/videos?api_key=${apiKey}&language=en-US`;
 
 const hindiMovie = baseUrl + 'discover/movie?'+ apiKey + '&with_origin_country=IN' ;
 const topRatedMovies = baseUrl + 'movie/top_rated?'+ apiKey  ;
@@ -62,7 +58,7 @@ function showDetails(movies) {
         
         <div class="movieDetails">
             <h3 class="title">${element.title}</h3>
-            <span class="votes"><i class="fa-solid fa-star"></i>${element.vote_average}</span>
+            <span class="votes"><i class="fa-solid fa-star"></i>${Math.round(element.vote_average*10)/10}</span>
         </div>`
         box.insertAdjacentHTML('afterbegin', htmlData);
         container.appendChild(box);
