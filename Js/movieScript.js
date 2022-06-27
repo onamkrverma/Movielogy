@@ -298,14 +298,14 @@ function showReviews(movie){
         let reviewsHtml = `
         <div class="reviewsInner">    
             <div class="reviewerDetails">
-            <img src="profile.png" alt="Author image">
+            <img src="image/profile.png" alt="Author image">
             <h5>${element.author_details.username}</h5>
             </div>
             <div class="reviewsContent">
-                <img src="quotation-mark1.png" alt="quote mark">
+                <img src="image/quotation-mark1.png" alt="quote mark">
                 <p>‟${element.content}”</p>
                 <div class="quoteIcon">
-                    <img src="quotation-mark2.png" alt="quote mark">
+                    <img src="image/quotation-mark2.png" alt="quote mark">
                 </div>
             </div>
         </div>
