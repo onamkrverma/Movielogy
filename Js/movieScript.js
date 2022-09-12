@@ -24,7 +24,7 @@ const getDetails = async (url) => {
     try {
         const resp = await fetch(url)
         const data = await resp.json();
-        console.log(data);
+        // console.log(data);
         // console.log(data.cast);
         showDetails(data)
 
@@ -111,7 +111,7 @@ function showDetails(movie) {
 const getVideo = async (url) => {
     const resp = await fetch(url)
     const data = await resp.json()
-    console.log(data);
+    // console.log(data);
     // console.log(data.results);
     showVideo(data.results)
 }
@@ -211,8 +211,6 @@ const getCast = async (url) => {
     // console.log(data.cast);
     castDetails(data.cast)
     crewDetails(data.crew)
-    // console.log(data.crew.filter(({ job }) => job === 'Director'))
-    // console.log(data.crew.filter(({ job }) => job === 'Writer'))
 
 
 }
@@ -244,7 +242,7 @@ function castDetails(movie) {
 
     // if cast details not found
     if (movie.length === 0) {
-        console.log('No data');
+        // console.log('No data');
         castDetail.innerHTML = 'No details found'
     }
 
@@ -271,7 +269,7 @@ function crewDetails(movie) {
 
     // if crew details not found
     if (movie.length === 0) {
-        console.log('No data');
+        // console.log('No data');
         crewDetail.innerHTML = 'No details found'
     }
 }
@@ -280,20 +278,20 @@ function crewDetails(movie) {
 const getReviews = async (url)=>{
     const resp = await fetch(url);
     const data = await resp.json();
-    console.log(data)
-    console.log(data.results)
+    // console.log(data)
+    // console.log(data.results)
     showReviews(data.results)
 
 }
 
 getReviews(reviews);
 
-function showReviews(movie){
+function showReviews(review){
     const reviewsContainer = document.querySelector('.reviewsContainer');
     const reviewsBox = document.createElement('div');
     reviewsBox.classList.add('reviewsBox');
 
-    movie.forEach(element => {
+    review.forEach(element => {
         
         let reviewsHtml = `
         <div class="reviewsInner">    
@@ -315,6 +313,10 @@ function showReviews(movie){
         reviewsContainer.appendChild(reviewsBox);
     });
    
+    // if no review fond 
+    if(review.length===0){
+        reviewsContainer.innerHTML = 'No reviews fond'
+    }
   
     //  reviews slider
     
@@ -326,19 +328,17 @@ function showReviews(movie){
     prev2.addEventListener('click',()=>{
         flag = flag-1;
         reviewSlider(flag);
-        console.log('prev click')
     })
     next2.addEventListener('click',()=>{
         flag = flag+1;
         reviewSlider(flag);
-        console.log('next click')
     })
 
     reviewSlider(flag);
 
     function reviewSlider(num){
         const reviewsInner = document.querySelectorAll('.reviewsInner');
-        console.log(reviewsInner);
+        // console.log(reviewsInner);
         
         if(num === reviewsInner.length){
             flag = 0;
@@ -353,7 +353,7 @@ function showReviews(movie){
             y.style.display = 'none';
         }
 
-        console.log(num);
+        // console.log(num);
         reviewsInner[num].style.display = 'flex';
     }
 

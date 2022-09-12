@@ -23,9 +23,9 @@ const getDetails = async (url) => {
 
     const resp = await fetch(url)
     const data = await resp.json();
-    console.log(data);
+    // console.log(data);
     const getResult = data.results
-    console.log(data.results);
+    // console.log(data.results);
     showDetails(getResult)
 
     // if search results not fond
@@ -79,7 +79,7 @@ function showDetails(movies) {
       // Redirect to next page with movies id 
         box.addEventListener('click',()=>{
             const details = `${element.id}`
-            console.log(details);
+            // console.log(details);
             localStorage.setItem('movieId',details);
             location.href = 'movieDetails.html'
         });
